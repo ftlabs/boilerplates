@@ -1,84 +1,123 @@
 <!DOCTYPE html>
 <html>
   	<head>
-	    <meta charset="UTF-8">
-	    <title>title</title>
 	    <!--
-	    	Starting with: http://origami.ft.com/docs/developer-guide/build-service/
-			Append the following modules to the css link  : https://build.origami.ft.com/bundles/css?modules=...,...,...
-			                            and the js  script: https://build.origami.ft.com/bundles/js?modules=...,...,...
-			* http://registry.origami.ft.com/components/o-header            => o-header@^4.0.0
-			* http://registry.origami.ft.com/components/o-typography@3.1.0  => o-typography@^3.1.0
-			* http://registry.origami.ft.com/components/o-forms@2.0.0       => o-forms@^2.0.0
-			* http://registry.origami.ft.com/components/o-buttons@3.0.3     => o-buttons@^3.0.3
+	    	Starting with: 
+	    	* http://origami.ft.com/docs/developer-guide/build-service/
+	    	* http://origami.ft.com/docs/developer-guide/using-modules/
+
+			Append the following modules to the css link  : https://build.origami.ft.com/bundles/css?modules=...,...,... (if module required)
+			                            and the js  script: https://build.origami.ft.com/bundles/js?modules=...,...,...  (if module required)
+              Reference document                                        Current version as of (9th Feb 2016)
+			* http://registry.origami.ft.com/components/o-header     => o-header@^4.0.0
+			* http://registry.origami.ft.com/components/o-typography => o-typography@^3.1.0
+			* http://registry.origami.ft.com/components/o-forms      => o-forms@^2.0.0
+			* http://registry.origami.ft.com/components/o-buttons    => o-buttons@^3.0.3
+			* http://registry.origami.ft.com/components/o-colors     => o-colors@^3.3.1
+			* http://registry.origami.ft.com/components/o-fonts      => o-fonts@^2.1.0
+			* http://registry.origami.ft.com/components/o-grid       => o-grid@^4.0.7
 
 			Refer to the above includes when you see an o-XYZ mentioned below.
+			Worth reviewing the components pages periodically for major version changes.
 		-->
-	    <link rel="stylesheet" href="https://build.origami.ft.com/bundles/css?modules=o-header@^4.0.0,o-typography@^3.1.0,o-forms@^2.0.0,o-buttons@^3.0.3" />
+	    <meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	    <title>title</title>
+	    <link rel="stylesheet" href="https://build.origami.ft.com/bundles/css?modules=o-header@^4.0.0,o-typography@^3.1.0,o-forms@^2.0.0,o-buttons@^3.0.3,o-colors@^3.3.1,o-fonts@^2.1.0,o-grid@^4.0.7" />
 
-	    <!-- the standard FT colours are not available via the includes (yet) so here is a quick way of getting properly pink-->
+		<!--
+			Perform your cuts the mustard test.
+			For information about what features come bundled with other
+			features in all browsers, see caniuse.com
+		-->
+		<script>
+			var cutsTheMustard = ('querySelector' in document && 'localStorage' in window && 'addEventListener' in window);
+
+			if (cutsTheMustard) {
+				// Swap the `core` class on the HTML element for an `enhanced` one
+				// We're doing it early in the head to avoid a flash of unstyled content
+				document.documentElement.className = document.documentElement.className.replace(/\bcore\b/g, 'enhanced');
+			}
+		</script>
+
 	    <style type="text/css">
+	    	/* Hide any enhanced experience content when in core mode, and vice versa. */
+			.core .o--if-js,
+			.enhanced .o--if-no-js { display: none !important; }
+
+			html {
+				/* Set a font family on the whole document */
+				font-family: MetricWeb;
+			
+				/* Prevent navigation menus from creating
+				   extra space on sides of the page */
+				overflow-x: hidden;
+			}
+
 	      	body {
-				background-color:#fff1e0;
-	      		margin:0;
+	      		margin: 0;
 			}
   		</style>
 	</head>
-	<body>
-		<div class="o-typography-body-wrapper"> <!-- this provides overrides for Headings, Titles, Leads and body content -->
-			<header data-o-component="o-header" class="o-header">
-				<div class="o-header__container">
-					<div class="o-header__primary">
-						<div class="o-header__primary__left demo__primary--placeholder">
-							<div class="o-header__logo demo__logo--placeholder">
-								<span>
-									<div class="o-header__logo o-header__logo--ft">
-									    <a href="http://www.ft.com"><abbr title="Financial Times">FT</abbr></a>
-									</div>
-								</span>
-							</div>
-							Financial Times
+	<body class="o-colors-page-background">
+		<header data-o-component="o-header" class="o-header">
+			<div class="o-header__container">
+				<div class="o-header__primary">
+					<div class="o-header__primary__left demo__primary--placeholder">
+						<div class="o-header__logo demo__logo--placeholder">
+							<span>
+								<div class="o-header__logo o-header__logo--ft">
+								    <a href="http://www.ft.com"><abbr title="Financial Times">FT</abbr></a>
+								</div>
+							</span>
 						</div>
+						Financial Times
 					</div>
 				</div>
-			</header>
+			</div>
+		</header>
 
-	        <h1>The main heading</h1>
-	        <h2>with a secondary heading</h2>
+		<div class="o-typography-body-wrapper o-grid-container"> <!-- this provides overrides for Headings, Titles, Leads and body content -->
+			<div class="o-grid-row">
+				<div data-o-grid-colspan="12">
+			        <h1>The main heading</h1>
+			        <h2>with a secondary heading</h2>
 
-		  	<p>Some text about some stuff.</p>
+				  	<p>Some text about some stuff.</p>
 
-		  	<h3>tertiary header: a form</h3>
+				  	<h3>tertiary header: a form</h3>
 
-		  	<!-- http://registry.origami.ft.com/components/o-forms@2.0.0 -->
-			<form class="o-forms-group" name="exampleform" action="formaction" method="post">
-				<label class="o-forms-label">Name</label> <input class="o-forms-text--small" type="text" name="name" value="Jon Doe"> 
-				<br/><br/>
-				<label class="o-forms-label">Rating</label>
-				<input class="o-forms-radio" type="radio" name="rating" value="1" id="radio11"></input>
-				<label for="radio11" class="o-forms-label">1</label>
-				<input class="o-forms-radio" type="radio" name="rating" value="2" id="radio12" checked></input>
-				<label for="radio12" class="o-forms-label">2</label>
-				<input class="o-forms-radio" type="radio" name="rating" value="3" id="radio13"></input>
-				<label for="radio13" class="o-forms-label">3</label>
-				<br/><br/>
-				<label class="o-forms-label">Comment</label> 
-				<textarea name="comment">enter comments here ...</textarea> <br><br>
-				<input class="o-buttons" type="submit" value="Submit Comment">
-			</form>
+				  	<!-- http://registry.origami.ft.com/components/o-forms@2.0.0 -->
+					<form class="o-forms-group" name="exampleform" action="formaction" method="post">
+						<label class="o-forms-label">Name</label> <input class="o-forms-text--small" type="text" name="name" value="Jon Doe"> 
+						<br/><br/>
+						<label class="o-forms-label">Rating</label>
+						<input class="o-forms-radio" type="radio" name="rating" value="1" id="radio11"></input>
+						<label for="radio11" class="o-forms-label">1</label>
+						<input class="o-forms-radio" type="radio" name="rating" value="2" id="radio12" checked></input>
+						<label for="radio12" class="o-forms-label">2</label>
+						<input class="o-forms-radio" type="radio" name="rating" value="3" id="radio13"></input>
+						<label for="radio13" class="o-forms-label">3</label>
+						<br/><br/>
+						<label class="o-forms-label">Comment</label> 
+						<textarea name="comment">enter comments here ...</textarea> <br><br>
+						<input class="o-buttons" type="submit" value="Submit Comment">
+					</form>
 
-			<h3>tertiary header: a list</h3>
+					<h3>tertiary header: a list</h3>
 
-			<ul>
-				<li> several things, including some article titles with links and sub-heads</li>
-				<li><a href="https://next.ft.com/content/547a2ad4-ce0e-11e5-831d-09f7778e7377">Growth fears stalk European and Wall Street stock indices</a></li>
-				<ul>
-					<li>US 10-year Treasury yield hits 12-month low as haven assets rally</li>
-				</ul>
-				<li><a href="https://next.ft.com/content/d7dea2b4-cb3a-11e5-be0b-b7ece4e953a0">Rare 1957 Ferrari sold for over €32m</a></li>
-			</ul>
+					<ul>
+						<li> several things, including some article titles with links and sub-heads</li>
+						<li><a href="https://next.ft.com/content/547a2ad4-ce0e-11e5-831d-09f7778e7377">Growth fears stalk European and Wall Street stock indices</a></li>
+						<ul>
+							<li>US 10-year Treasury yield hits 12-month low as haven assets rally</li>
+						</ul>
+						<li><a href="https://next.ft.com/content/d7dea2b4-cb3a-11e5-be0b-b7ece4e953a0">Rare 1957 Ferrari sold for over €32m</a></li>
+					</ul>
+				</div>
+			</div>
 		</div>
-
-		<script src="https://build.origami.ft.com/bundles/js?modules=o-header@^4.0.0,o-typography@^3.1.0,o-forms@^2.0.0,o-buttons@^3.0.3"></script>
+		<script src="https://build.origami.ft.com/bundles/js?modules=o-header@^4.0.0,o-grid@^4.0.7"></script>
 	</body>
 </html>
