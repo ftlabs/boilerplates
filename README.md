@@ -21,6 +21,7 @@ You can consult the Origami docs for how to bring the css and js compilation int
 You should consider including the following modules:
 
 * [o-tracking](http://registry.origami.ft.com/components/o-tracking@1.1.4) to ensure your page is being automatically tracked
+* [o-colors](http://registry.origami.ft.com/components/o-colors@3.3.1) for, well, the palette of official FT colours
 * ...
 
 If you want to dig into the underlying Origami code, contribute, or raise an issue, here's the repo: [https://github.com/Financial-Times/ft-origami](https://github.com/Financial-Times/ft-origami).
