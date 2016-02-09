@@ -8,7 +8,7 @@ This repo is *not* intended to answer all questions about Origami. For that, see
 
 Starting with a straightforward html file, simple.html, there are examples of how to style it to look like
 * a page on FT.com: simple-ft-styled.html
-* a page in the Origami techdocs
+* a page in the Origami techdocs: simple-ft-techdoc-styled.doc
 
 The basic approach is to construct two urls requesting all the required Origami modules (for css and js) and include them in the page. When the page is rendered in-browser, that css and js payload is compiled at Origami headquarters, with a noticeable delay for the first request, and served to the browser. Subsequent requests are cached, so there is no delay.
 
