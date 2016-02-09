@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  	<head>
+    	<meta charset="UTF-8">
+    	<title>title</title>
+    	<!--
+	    	Starting with: http://registry.origami.ft.com/components/o-techdocs@5.0.1
+			Append the following module to the css link  : https://build.origami.ft.com/bundles/css?modules=...,...,...
+			                            and the js  script: https://build.origami.ft.com/bundles/js?modules=...,...,...
+			* http://registry.origami.ft.com/components/o-techdocs@5.0.1#section-usage            => o-techdocs@^5.0.1
+
+			Refer to the above includes when you see an o-XYZ mentioned below.
+		-->
+		<link rel="stylesheet" href="https://build.origami.ft.com/bundles/css?modules=o-techdocs@^5.0.1" />
+  	</head>
+	<body>
+		<header data-o-component="o-header" class="o-header">
+			<div class="o-header__container">
+				<div class="o-header__inner">
+					<div class="o-header__primary">
+						<div class="o-header__primary__left">
+							<a class="o-header__logo o-header__logo--ft" href="http://www.ft.com">
+								<abbr title="Financial Times">FT</abbr>
+								<h1 class="o-header__title">The main heading</h1>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<!-- Hero banner to promote your service in a few words -->
+		<div class="o-techdocs-hero">
+			<h2 class="o-techdocs-hero__title">
+				with a secondary heading
+			</h2>
+		</div>
+
+		<!-- Navigation menu and main content -->
+		<div class="o-techdocs-container">
+			<div class="o-techdocs-layout">
+				<!-- Main content (outer div for layout, inner for formatting) -->
+				<div class="o-techdocs-main">
+					<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.css"></link>
+					<div class="o-techdocs-content">
+						<h1>another heading</h1>
+	  					<p class="o-techdocs-leadbody">Some text about some stuff.</p>
+	  					<p>and yet more text.</p>
+	  					<h3>tertiary header: a form</h3>
+
+						<form name="exampleform" action="formaction" method="post">
+							Name: <br> <input type="text" name="name" value="Jon Doe"> <br>
+							Rating: <br>
+							<input type="radio" name="rating" value="1"> 1
+							<input type="radio" name="rating" value="2"> 2
+							<input type="radio" name="rating" value="3"> 3 <br>
+							Comment: <br> <textarea name="comment">enter comments here ...</textarea> <br><br>
+							<input type="submit" value="Submit Comment">
+						</form>
+
+						<h3>tertiary header: a list</h3>
+
+						<ul>
+							<li> several things, including some article titles with links and sub-heads</li>
+							<li><a href="https://next.ft.com/content/547a2ad4-ce0e-11e5-831d-09f7778e7377">Growth fears stalk European and Wall Street stock indices</a></li>
+							<ul>
+								<li>US 10-year Treasury yield hits 12-month low as haven assets rally</li>
+							</ul>
+							<li><a href="https://next.ft.com/content/d7dea2b4-cb3a-11e5-be0b-b7ece4e953a0">Rare 1957 Ferrari sold for over €32m</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="https://build.origami.ft.com/bundles/js?modules=o-techdocs@^5.0.1"></script>
+  </body>
+</html>
