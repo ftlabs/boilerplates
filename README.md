@@ -14,4 +14,13 @@ The basic approach is to construct two urls requesting all the required Origami 
 
 Within the page, the Origami includes override some of the basic element styling, e.g. [o-typography](http://registry.origami.ft.com/components/o-typography@3.1.0), or provide css classes to insert into some html elements, e.g. class="[o-buttons](http://registry.origami.ft.com/components/o-buttons@3.0.3)".
 
+## and then
+
 You can consult the Origami docs for how to bring the css and js compilation into your own page build process if you want to have full control over it.
+
+You should consider including the following modules:
+
+* [o-tracking](http://registry.origami.ft.com/components/o-tracking@1.1.4) to ensure your page is being automatically tracked
+* ...
+
+If you want to dig into the underlying Origami code, contribute, or raise an issue, here's the repo: [https://github.com/Financial-Times/ft-origami](https://github.com/Financial-Times/ft-origami).
