@@ -12,6 +12,6 @@ Starting with a straightforward html file, simple.html, there are examples of ho
 
 The basic approach is to construct two urls requesting all the required Origami modules (for css and js) and include them in the page. When the page is rendered in-browser, that css and js payload is compiled at Origami headquarters, with a noticeable delay for the first request, and served to the browser. Subsequent requests are cached, so there is no delay.
 
-Within the page, the Origami includes override some of the basic element styling, e.g. [o-typography](http://registry.origami.ft.com/components/o-typography@3.1.0), or provide css classes to insert into some html elements, e.g. class="o-buttons".
+Within the page, the Origami includes override some of the basic element styling, e.g. [o-typography](http://registry.origami.ft.com/components/o-typography@3.1.0), or provide css classes to insert into some html elements, e.g. class="[o-buttons](http://registry.origami.ft.com/components/o-buttons@3.0.3)".
 
 You can consult the Origami docs for how to bring the css and js compilation into your own page build process if you want to have full control over it.
