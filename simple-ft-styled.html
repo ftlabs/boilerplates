@@ -4,64 +4,73 @@
 	    <meta charset="UTF-8">
 	    <title>title</title>
 	    <!--
-	    	Start with: http://origami.ft.com/docs/developer-guide/build-service/
-			Append the following modules to the css link  : https://build.origami.ft.com/bundles/css?modules=...
-			                            and the js  script: https://build.origami.ft.com/bundles/js?modules=...
+	    	Starting with: http://origami.ft.com/docs/developer-guide/build-service/
+			Append the following modules to the css link  : https://build.origami.ft.com/bundles/css?modules=...,...,...
+			                            and the js  script: https://build.origami.ft.com/bundles/js?modules=...,...,...
 			* http://registry.origami.ft.com/components/o-header            => o-header@^4.0.0
 			* http://registry.origami.ft.com/components/o-typography@3.1.0  => o-typography@^3.1.0
 			* http://registry.origami.ft.com/components/o-forms@2.0.0       => o-forms@^2.0.0
+			* http://registry.origami.ft.com/components/o-buttons@3.0.3     => o-buttons@^3.0.3
+
+			Refer to the above includes when you see an o-XYZ mentioned below.
 		-->
-	    <link rel="stylesheet" href="https://build.origami.ft.com/bundles/css?modules=o-header@^4.0.0,o-typography@^3.1.0,o-forms@^2.0.0" />
+	    <link rel="stylesheet" href="https://build.origami.ft.com/bundles/css?modules=o-header@^4.0.0,o-typography@^3.1.0,o-forms@^2.0.0,o-buttons@^3.0.3" />
 	</head>
 	<body>
-		<!-- start with: http://origami.ft.com/docs/developer-guide/build-service/ -->
-		<!-- for more info: http://registry.origami.ft.com/components/o-header -->
-		<header data-o-component="o-header" class="o-header">
-			<div class="o-header__container">
-				<div class="o-header__primary">
-					<div class="o-header__primary__left demo__primary--placeholder">
-						<div class="o-header__logo demo__logo--placeholder">
-							<a href="http://www.ft.com" title="Go to Financial Times homepage">
+		<div class="o-typography-body-wrapper"> <!-- this provides overrides for Headings, Titles, Leads and body content -->
+			<header data-o-component="o-header" class="o-header">
+				<div class="o-header__container">
+					<div class="o-header__primary">
+						<div class="o-header__primary__left demo__primary--placeholder">
+							<div class="o-header__logo demo__logo--placeholder">
 								<span>
-									Financial Times
+									<div class="o-header__logo o-header__logo--ft">
+									    <a href="http://www.ft.com"><abbr title="Financial Times">FT</abbr></a>
+									</div>
 								</span>
-							</a>
+							</div>
+							Financial Times
 						</div>
 					</div>
 				</div>
-			</div>
-		</header>
+			</header>
 
-		<!-- for more info: http://registry.origami.ft.com/components/o-typography@3.1.0 -->
-        <h1 class="o-typography-heading1">The main heading</h1>
-        <h2 class="o-typography-heading2">with a secondary heading</h2>
+	        <h1>The main heading</h1>
+	        <h2>with a secondary heading</h2>
 
-	  	<p class="o-typography-body">Some text about some stuff.</p>
+		  	<p>Some text about some stuff.</p>
 
-	  	<h3 class="o-typography-heading2">tertiary header: a form</h3>
+		  	<h3>tertiary header: a form</h3>
 
-	  	<!-- http://registry.origami.ft.com/components/o-forms@2.0.0 -->
-		<form name="exampleform" action="formaction" method="post">
-			Name: <br> <input type="text" name="name" value="Jon Doe"> <br>
-			Rating: <br>
-			<input type="radio" name="rating" value="1"> 1
-			<input type="radio" name="rating" value="2"> 2
-			<input type="radio" name="rating" value="3"> 3 <br>
-			Comment: <br> <textarea name="comment">enter comments here ...</textarea> <br><br>
-			<input type="submit" value="Submit Comment">
-		</form>
+		  	<!-- http://registry.origami.ft.com/components/o-forms@2.0.0 -->
+			<form class="o-forms-group" name="exampleform" action="formaction" method="post">
+				<label class="o-forms-label">Name</label> <input class="o-forms-text--small" type="text" name="name" value="Jon Doe"> 
+				<br/><br/>
+				<label class="o-forms-label">Rating</label>
+				<input class="o-forms-radio" type="radio" name="rating" value="1" id="radio11"></input>
+				<label for="radio11" class="o-forms-label">1</label>
+				<input class="o-forms-radio" type="radio" name="rating" value="2" id="radio12" checked></input>
+				<label for="radio12" class="o-forms-label">2</label>
+				<input class="o-forms-radio" type="radio" name="rating" value="3" id="radio13"></input>
+				<label for="radio13" class="o-forms-label">3</label>
+				<br/><br/>
+				<label class="o-forms-label">Comment</label> 
+				<textarea name="comment">enter comments here ...</textarea> <br><br>
+				<input class="o-buttons" type="submit" value="Submit Comment">
+			</form>
 
-		<h3>tertiary header: a list</h3>
+			<h3>tertiary header: a list</h3>
 
-		<ul>
-			<li> several things, including some article titles with links and sub-heads</li>
-			<li><a href="https://next.ft.com/content/547a2ad4-ce0e-11e5-831d-09f7778e7377">Growth fears stalk European and Wall Street stock indices</a></li>
 			<ul>
-				<li>US 10-year Treasury yield hits 12-month low as haven assets rally</li>
+				<li> several things, including some article titles with links and sub-heads</li>
+				<li><a href="https://next.ft.com/content/547a2ad4-ce0e-11e5-831d-09f7778e7377">Growth fears stalk European and Wall Street stock indices</a></li>
+				<ul>
+					<li>US 10-year Treasury yield hits 12-month low as haven assets rally</li>
+				</ul>
+				<li><a href="https://next.ft.com/content/d7dea2b4-cb3a-11e5-be0b-b7ece4e953a0">Rare 1957 Ferrari sold for over €32m</a></li>
 			</ul>
-			<li><a href="https://next.ft.com/content/d7dea2b4-cb3a-11e5-be0b-b7ece4e953a0">Rare 1957 Ferrari sold for over €32m</a></li>
-		</ul>
+		</div>
 
-		<script src="https://build.origami.ft.com/bundles/js?modules=o-header@^4.0.0,o-typography@^3.1.0"></script>
+		<script src="https://build.origami.ft.com/bundles/js?modules=o-header@^4.0.0,o-typography@^3.1.0,o-forms@^2.0.0,o-buttons@^3.0.3"></script>
 	</body>
 </html>
