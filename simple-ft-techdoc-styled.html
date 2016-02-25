@@ -2,21 +2,42 @@
 <html>
   	<head>
     	<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
     	<title>title</title>
     	<!--
 	    	Starting with: http://registry.origami.ft.com/components/o-techdocs@5.0.1
 			Append the following module to the css link  : https://build.origami.ft.com/bundles/css?modules=...,...,...
 			                            and the js  script: https://build.origami.ft.com/bundles/js?modules=...,...,...
-			* http://registry.origami.ft.com/components/o-techdocs@5.0.1#section-usage            => o-techdocs@^5.0.1
+			* http://registry.origami.ft.com/components/o-techdocs@5.0.1           => o-techdocs@^5.0.1
 
 			Refer to the above includes when you see an o-XYZ mentioned below.
 		-->
 		<link rel="stylesheet" href="https://build.origami.ft.com/bundles/css?modules=o-techdocs@^5.0.1" />
 
+		<!--
+			Perform your cuts the mustard test.
+			For information about what features come bundled with other
+			features in all browsers, see caniuse.com
+		-->
+		<script>
+			var cutsTheMustard = ('querySelector' in document && 'localStorage' in window && 'addEventListener' in window);
+
+			if (cutsTheMustard) {
+				// Swap the `core` class on the HTML element for an `enhanced` one
+				// We're doing it early in the head to avoid a flash of unstyled content
+				document.documentElement.className = document.documentElement.className.replace(/\bcore\b/g, 'enhanced');
+			}
+		</script>
+
 	    <style type="text/css">
 	      	body {
 				margin:0;
+				/* Prevent navigation menus from creating
+				   extra space on sides of the page */
+				overflow-x: hidden;
 			}
+
   		</style>
 
   	</head>
@@ -48,7 +69,7 @@
 			<div class="o-techdocs-layout">
 				<!-- Main content (outer div for layout, inner for formatting) -->
 				<div class="o-techdocs-main">
-					<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.css"></link>
+					<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.css"></link>
 					<div class="o-techdocs-content">
 						<h1>another heading</h1>
 	  					<p class="o-techdocs-leadbody">Some text about some stuff.</p>
